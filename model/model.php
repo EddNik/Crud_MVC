@@ -48,8 +48,8 @@ private $nameTable = "article";
         $pdo_statement->bindValue(":lastName", $lastName);
         $pdo_statement->bindValue(":hireDate", $hireDate);
         $pdo_statement->execute();
-        //return $result = $pdo_statement->execute();
-        return $result = $pdo_conn->lastInsertId();
+        return $result = $pdo_statement->execute();
+
     }
     public function updateData($firstName,$lastName,$hireDate,$id){
         $pdo_conn = $this->getConnectionDB();
